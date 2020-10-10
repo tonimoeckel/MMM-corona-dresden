@@ -5,6 +5,9 @@
 * Zahl der derzeit angesteckten Personen
 * Inzidenz inkl. Chart
 
+![screenshot](https://github.com/tonimoeckel/MMM-corona-dresden/blob/main/screenshot/screen.png)
+
+
 ### Data Source
 https://services.arcgis.com/ORpvigFPJUhb8RDF/arcgis/rest/services/corona_DD_7_Sicht/FeatureServer/0/query?f=json&where=Anzeige_Indikator%3D%27x%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&resultOffset=0&resultRecordCount=50&resultType=standard&cacheHint=true
 
