@@ -37,7 +37,7 @@ Module.register("MMM-corona-dresden", {
 
         var wrapper = document.createElement("div");
         wrapper.className = "wrapper";
-        
+
         if (!this.loaded) {
             wrapper.innerHTML = "Lade...";
             return wrapper;
@@ -63,7 +63,7 @@ Module.register("MMM-corona-dresden", {
                     text: 'Infiziert: {{value}}',
                     default: 0,
                     custom: (el, value, data) => {
-                        
+
                         const health = window._.get(this.data,'features[0].attributes.Genesungsfall');
                         const died = window._.get(this.data,'features[0].attributes.Sterbefall');
                         el.innerHTML = `Infiziert: ${value-health-died}`;
@@ -115,7 +115,7 @@ Module.register("MMM-corona-dresden", {
                         }
                         return el;
                     }
-                    
+
                 },
                 {
                     keypath: 'features[0].attributes.Inzidenz',
@@ -135,10 +135,11 @@ Module.register("MMM-corona-dresden", {
                             staticZones: [
                                 {strokeStyle: "#004e1c", min: 0, max: 5}, // Red from 100 to 130
                                 {strokeStyle: "#008000", min: 5, max: 20}, // Red from 100 to 130
-                                {strokeStyle: "#9bff00", min: 20, max: 25}, 
-                                {strokeStyle: "#ffff00", min: 25, max: 35}, 
-                                {strokeStyle: "#ffa500", min: 35, max: 50}, 
-                                {strokeStyle: "#ff0000", min: 50, max: 60}
+                                {strokeStyle: "#9bff00", min: 20, max: 25},
+                                {strokeStyle: "#ffff00", min: 25, max: 35},
+                                {strokeStyle: "#ffa500", min: 35, max: 50},
+                                {strokeStyle: "#ff0000", min: 50, max: 80},
+                                {strokeStyle: "#770000", min: 80, max: 120}
                              ],
                             limitMax: false,     // If false, max value increases automatically if value > maxValue
                             limitMin: false,     // If true, the min value of the gauge will be fixed
@@ -147,7 +148,7 @@ Module.register("MMM-corona-dresden", {
                             strokeColor: '#E0E0E0',  // to see which ones work best for you
                             generateGradient: true,
                             highDpiSupport: true,     // High resolution support
-                            
+
                           };
                           setTimeout(() => {
                             var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
@@ -156,10 +157,10 @@ Module.register("MMM-corona-dresden", {
                             gauge.animationSpeed = 32; // set animation speed (32 is default value)
                             gauge.set(value); // set actual value
                           }, 0)
-                          
+
                         return target;
                     }
-                    
+
                 }
             ]
 
@@ -173,12 +174,12 @@ Module.register("MMM-corona-dresden", {
                 }
 
                 wrapper.appendChild(valueDiv);
-            }) 
+            })
 
-            
+
         }
 
-        
+
         return wrapper;
     },
 
